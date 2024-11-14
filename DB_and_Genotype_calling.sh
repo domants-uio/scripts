@@ -22,6 +22,13 @@ FILENAME=$1
 
 module load BIOS-IN5410/HT-2023
 
+##Access to PCA program SMART PCA
+export
+PATH="/projects/ec34/biosin5410/sbatch_intro/SNP_calling/script/:$PATH"
+
+##Run PCA program SMART PCA
+Run_PCA ${FILENAME}.vcf.gz
+
 ##create a gvcf.list
 ls *gvcf.gz > gvcf.list # This creates a text file with all the HaplotypeCalled.gvcf.gz ≈filenames.
 ##force create and remove an empty directory (needed to prevent errors when rerunning)
